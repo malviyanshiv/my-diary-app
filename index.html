@@ -10,7 +10,169 @@
         
         <title>Starter  &mdash; everything start with a small step</title>
     </head>
-    <body>
-        
+    <body onload="showElement('single-diary');">
+        <div class="header">
+            <img src="./img/logo.png" alt="logo" class="logo">
+            <form action="post" class="search">
+                <input type="text" class="search__input" name="search-text" placeholder="Search Dairy" required>
+                <button class="search__button">
+                    <svg class="search__icon">
+                        <use xlink:href="img/sprite.svg#icon-magnifying-glass"></use>
+                    </svg>
+                </button>
+            </form>
+            <nav class="user-nav">
+                <div class="user-nav__icon-box">
+                    <svg class="user-nav__icon">
+                        <use xlink:href="img/sprite.svg#icon-bookmark"></use>
+                    </svg>
+                    <span class="user-nav__notification">7</span>
+                </div>
+                <div class="user-nav__icon-box">
+                    <svg class="user-nav__icon">
+                        <use xlink:href="img/sprite.svg#icon-chat"></use>
+                    </svg>
+                    <span class="user-nav__notification">13</span>
+                </div>
+                <div class="user-nav__user">
+                    <img src="img/user.jpg" alt="User photo" class="user-nav__user-photo">
+                    <span class="user-nav__user-name">Trump</span>
+                </div>
+            </nav>
+        </div>
+
+        <main class="main">
+            <nav class="sidebar">
+                <ul class="side-nav">
+                    <li class="side-nav__item side-nav__item-active" onclick="onclickHandler(this, 'single-diary', 'diary-card');"><a href="#" class="side-nav__link">My Diary</a></li>
+                    <li class="side-nav__item" onclick="onclickHandler(this, 'diary-card', 'single-diary');"><a href="#" class="side-nav__link">All Diaries</a></li>
+                    <li class="side-nav__item"><a href="#" class="side-nav__link">Favirotes</a></li>
+                    <li class="side-nav__item"><a href="#" class="side-nav__link">Archives</a></li>
+                </ul>
+                <div class="legal">  © 2020 by PD. All rights reserved.</div>
+            </nav>
+            <div class="content">
+                <!------------------------------------------- MY DIARY CONTENT------------------------------------------------->
+                <div class="single-diary hide">
+                    <div class="overview">
+                        <h2 class="overview__heading">tour and travels</h2>
+                        <h3 class="overview__sub-heading">10 May 2020</h3>
+                        <div class="overview__icon-box">
+                            <svg class="favourite-icon">
+                                <use xlink:href="img/sprite.svg#icon-bookmark"></use>
+                            </svg>
+                        </div>
+                    </div>
+
+                    <div class="diary-page">
+                        
+                    </div>
+
+                    <div class="prev-page-icon">
+                        <span class="btn-circle-medium"></span>
+                    </div>
+                    <div class="next-page-icon">
+                        <span class="btn-circle-medium"></span>
+                    </div>
+                    <div class="editing-option-container">
+                        <div class="edit-page-icon">
+                            <span class="btn-circle-medium"></span>
+                        </div>
+                        <div class="new-page-icon">
+                            <span class="btn-circle-medium"></span>
+                        </div>
+                    </div>
+                </div>
+                <!------------------------------------------- MY DIARY CONTENT------------------------------------------------->
+
+
+                <!------------------------------------------- ALL DIARY CONTENT------------------------------------------------->
+                <div class="diary-card hide">
+                    <div class="card__item">
+                        <div class="card-side card-side--front">
+                            <div class="card__cover-photo" data-background="./img/diarycover-1.jpg">&nbsp;</div>
+                            <h4 class="card__heading">
+                                <span class="card__heading__span">my everyday entry</span>
+                        </div>
+                        <div class="card-side card-side--back">
+                            <ul>
+                                <li>13 May 2020</li>
+                                <li>193 entries</li>
+                                <li>6 faviourites</li>
+                            </ul>
+                            <a href="#" class="btn btn-medium">open now</a>
+                        </div>
+                    </div>
+                    <div class="card__item">
+                        <div class="card-side card-side--front">
+                            <div class="card__cover-photo" data-background="./img/diarycover-1.jpg">&nbsp;</div>
+                            <h4 class="card__heading">
+                                <span class="card__heading__span">tour & travel</span>
+                        </div>
+                        <div class="card-side card-side--back">
+                            <ul>
+                                <li>13 May 2020</li>
+                                <li>193 entries</li>
+                                <li>6 faviourites</li>
+                            </ul>
+                            <a href="#" class="btn btn-medium">open now</a>
+                        </div>
+                    </div>
+                    <div class="card__item">
+                        <div class="card-side card-side--front">
+                            <div class="card__cover-photo" data-background="./img/diarycover-1.jpg">&nbsp;</div>
+                            <h4 class="card__heading">
+                                <span class="card__heading__span">goa trip 2k20</span>
+                        </div>
+                        <div class="card-side card-side--back">
+                            <ul>
+                                <li>13 May 2020</li>
+                                <li>193 entries</li>
+                                <li>6 faviourites</li>
+                            </ul>
+                            <a href="#" class="btn btn-medium">open now</a>
+                        </div>
+                    </div>
+                    <div class="card__item">
+                        <div class="card-side card-side--front">
+                            <div class="card__cover-photo" data-background="./img/diarycover-1.jpg">&nbsp;</div>
+                            <h4 class="card__heading">
+                                <span class="card__heading__span">add new diary</span>
+                        </div>
+                        <div class="card-side card-side--back">
+                            <a href="#" class="btn btn-medium">Add Now</a>
+                        </div>
+                    </div>
+                </div>
+                <!------------------------------------------- ALL DIARY CONTENT------------------------------------------------->
+
+
+            </div>
+        </main>
     </body>
+
+    <script>
+
+        function hideElement(className){
+            let ele = document.getElementsByClassName(className);
+            for(let i = 0; i < ele.length; i++)
+                ele[i].classList.add("hide");
+        }
+
+        function showElement(className){
+            let ele = document.getElementsByClassName(className);
+            for(let i = 0; i < ele.length; i++)
+                ele[i].classList.remove("hide");
+        }
+
+        function onclickHandler(current, toshow, tohide){
+            let sidenavs = document.getElementsByClassName("side-nav__item");
+            for(let i = 0; i < sidenavs.length; i++)
+                sidenavs[i].classList.remove("side-nav__item-active");
+            current.classList.add("side-nav__item-active");
+            hideElement(tohide)
+            showElement(toshow);
+            console.log(toshow, tohide);
+        }
+    </script>
 </html>

@@ -1,0 +1,78 @@
+.header {
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: $header-height;
+    border-bottom: $thin-border-black;
+}
+
+.logo {
+    height: 3.5rem;
+    margin-left: 2rem;
+}
+
+.user-nav {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    &__icon {
+        height: 2.5rem;
+        width: 2.5rem;
+        margin: auto;
+    }
+
+    &__icon-box {
+        width: 7rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center; 
+        position: relative;
+        cursor: pointer;
+    }
+
+    &__icon-box:hover {
+        background-color: $color-grey-light-3;
+    }
+
+    &__notification {
+        position: absolute;
+        height: 1.75rem;
+        width: 1.75rem;
+        font-size: 1rem;
+        display: flex;
+        background-color: $color-primary;
+        top: 1rem;
+        right: 1.1rem;
+        border-radius: 50%;
+        justify-content: center;
+        align-items: center;
+        color: $color-grey-light-1;
+    }
+
+    &__user {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        margin: 0 2rem;
+
+        &-photo {
+            height: 4rem;
+            width: 4rem;
+            border-radius: 50%;
+            margin-right: .7rem;
+        }
+
+        &-name {
+            font-size: $default-font-size;
+            font-weight: 600;
+        }
+    }
+
+    &__user:hover {
+        background-color: $color-grey-light-3;
+    }
+
+}

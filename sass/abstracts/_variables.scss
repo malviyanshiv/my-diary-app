@@ -9,12 +9,17 @@ Primary dark: #BA265D
 $color-primary-light : #17BEFF;
 $color-primary : #007BFF;
 $color-primary-dark : #014FBD;
-$coolor-grey-light-1 : #faf9f9;
-$coolor-grey-light-2 : #f4f2f2;
-$coolor-grey-light-3 : #f0eeee;
-$coolor-grey-light-4 : #ccc;
-$coolor-grey-dark-1 : #333;
-$coolor-grey-dark-2 : #777;
-$coolor-grey-dark-3 : #999;
+$color-grey-light-1 : #faf9f9;
+$color-grey-light-2 : #f4f2f2;
+$color-grey-light-3 : #f0eeee;
+$color-grey-light-4 : #ccc;
+$color-grey-dark-1 : #333;
+$color-grey-dark-2 : #777;
+$color-grey-dark-3 : #999;
 
 $default-font-size : 1.6rem;
+$header-height : 7rem;
+$sidebar-width : 18%;
+
+
+$thin-border-black : 1px solid $color-grey-light-3;

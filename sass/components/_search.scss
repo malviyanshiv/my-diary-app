@@ -1,0 +1,39 @@
+.search {
+    flex: 0 0 40%;
+    font-size: 1.4rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+
+    &__button {
+        height: 2.4rem;
+        width: 2rem;
+        border: none;
+        cursor: pointer;
+    }
+
+    &__icon {
+        height: 2.4rem;
+        width: 2rem;
+        fill: $color-primary;
+        margin: auto;
+    }
+
+    &__input {
+        display: inline-block;
+        width: 90%;
+        color: $color-grey-dark-3;
+        border: none;
+        padding: .7rem 2rem;
+        background: $color-grey-light-2;
+        font-size: inherit;
+        border-radius: 100px;
+        margin-right: -3.25rem;
+        transition: all .2s;
+    }
+
+    &__input:focus {
+        outline: none;
+        width: 100%;
+    }
+}
