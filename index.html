@@ -10,7 +10,7 @@
         
         <title>Starter  &mdash; everything start with a small step</title>
     </head>
-    <body onload="showElement('single-diary');">
+    <body onload="/*showElement('single-diary');*/">
         <div class="header">
             <img src="./img/logo.png" alt="logo" class="logo">
             <form action="post" class="search">
@@ -149,30 +149,19 @@
 
             </div>
         </main>
+
+        <!-------------------------------------------------- EDITOR -------------------------------------------------------->
+        <div class="popup">
+            <div class="editor">
+                <div class="toolbar">&nbsp;</div>
+                <div class="page" contenteditable="true">Start editing now</div>
+                <div class="second-toolbar">
+                    <p class="character-count">Characters : <span>45</span></p>
+                    <a class="btn btn-medium">save now</a>
+                    <a class="btn btn-medium">discard</a>
+                </div>
+            </div>
+        </div>
     </body>
-
-    <script>
-
-        function hideElement(className){
-            let ele = document.getElementsByClassName(className);
-            for(let i = 0; i < ele.length; i++)
-                ele[i].classList.add("hide");
-        }
-
-        function showElement(className){
-            let ele = document.getElementsByClassName(className);
-            for(let i = 0; i < ele.length; i++)
-                ele[i].classList.remove("hide");
-        }
-
-        function onclickHandler(current, toshow, tohide){
-            let sidenavs = document.getElementsByClassName("side-nav__item");
-            for(let i = 0; i < sidenavs.length; i++)
-                sidenavs[i].classList.remove("side-nav__item-active");
-            current.classList.add("side-nav__item-active");
-            hideElement(tohide)
-            showElement(toshow);
-            console.log(toshow, tohide);
-        }
-    </script>
+    <script src="./js/index.js"></script>
 </html>

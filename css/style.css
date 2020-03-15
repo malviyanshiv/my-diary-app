@@ -29,13 +29,19 @@ html {
   visibility: hidden;
   display: none !important; }
 
+.sticky {
+  position: fixed;
+  top: 0;
+  width: inherit; }
+
 .btn {
   background-color: #014FBD;
   color: #faf9f9;
   border-radius: 3rem;
   cursor: pointer;
   text-decoration: none;
-  transition: all .2s; }
+  transition: all .2s;
+  text-align: center; }
 
 .btn:hover {
   box-shadow: 0 0.6rem 1.1rem #777;
@@ -151,6 +157,62 @@ html {
   color: #ccc;
   padding: 2.5rem; }
 
+.popup {
+  min-height: 100vh;
+  min-width: 100%;
+  position: absolute;
+  background-color: rgba(204, 204, 204, 0.95);
+  top: 0;
+  left: 0;
+  z-index: 9999; }
+
+.editor {
+  min-height: 90vh;
+  width: 110rem;
+  background-color: #f0eeee;
+  margin: 3rem auto;
+  box-shadow: 0 1.5rem 3rem #999;
+  border-radius: 1rem;
+  font-size: 2rem;
+  overflow: hidden;
+  border-radius: .7rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; }
+
+.sticky + .page {
+  margin-top: 9.5rem; }
+
+.toolbar {
+  background-color: #fff;
+  height: 10rem;
+  border-bottom: 1px solid #f0eeee;
+  padding: 1rem 2.5rem; }
+
+.page {
+  background-color: #fff;
+  flex-grow: 1;
+  padding: 1.5rem 3rem;
+  min-height: 50vh; }
+  .page:focus {
+    outline: none;
+    border: none; }
+
+.second-toolbar {
+  background-color: #fff;
+  padding: 2.5rem;
+  display: flex;
+  justify-content: flex-end;
+  border-top: 1px solid #f0eeee; }
+  .second-toolbar .btn:not(:last-of-type) {
+    margin-right: 2rem; }
+
+.character-count {
+  display: inline-block;
+  margin-right: auto;
+  color: #777; }
+
 .header {
   background-color: #fff;
   display: flex;
@@ -241,7 +303,7 @@ html {
 
 .diary-page {
   height: 1140px;
-  width: 85%;
+  width: 110rem;
   background-color: #f0eeee;
   margin: 3rem auto;
   box-shadow: 0 1.5rem 3rem #999;
