@@ -64,8 +64,8 @@
                         </div>
                     </div>
 
-                    <div class="diary-page">
-                        
+                    <div class="diary-page" id="diary-page">
+                        <div style="text-align: center;"><b><font color="#039ef1">WELCOME</font></b></div>Hi, welcome to the diary application. Lets dive right in and explore the features around. We can<blockquote style="margin: 0 0 0 40px; border: none; padding: 0px;"><ul><li>Create new diary</li><li>Add pages to the diary</li><li>Insert inline images</li><li>Full diary search feature</li></ul></blockquote><div><br></div>For more queries visit our&nbsp;<a href="https://mydairyapp.com/faq">FAQ page</a>.<div>Why to wait.<b><font color="#0498f0"> JUST DIVE RIGHT IN</font>.</b></div><div><b><br></b></div><div>Thanks &amp; Regards,&nbsp;</div><div>Prominent Developers :)</div>
                     </div>
 
                     <div class="prev-page-icon">
@@ -75,7 +75,7 @@
                         <span class="btn-circle-medium"></span>
                     </div>
                     <div class="editing-option-container">
-                        <div class="edit-page-icon">
+                        <div class="edit-page-icon" onclick="loadEditor();">
                             <span class="btn-circle-medium"></span>
                         </div>
                         <div class="new-page-icon">
@@ -149,30 +149,68 @@
 
             </div>
         </main>
+
+        <!-------------------------------------------------- EDITOR -------------------------------------------------------->
+        <div class="popup hide" id="editor-container">
+            <div class="editor">
+                <div class="toolbar">
+                    <div class="toolbar__primary">
+                        <div class="toolbar__subgroup">
+                            <button class="toolbar__item" id="item-bold" title="Bold" onclick="bold();"></button>
+                            <button class="toolbar__item" id="item-italic" title="Italic" onclick="italic();"></button>
+                            <button class="toolbar__item" id="item-more" title="show more" onclick="showToolbars(this, ['toolbar__secondary', 'toolbar__tertiary-1']);"></button>
+                        </div>
+                        <div class="toolbar__subgroup">
+                            <button class="toolbar__item" id="item-paragraphRight" title="Align Right" onclick="justifyRight();"></button>
+                            <button class="toolbar__item" id="item-paragraphCenter" title="Align Center" onclick="justifyCenter();"></button>
+                            <button class="toolbar__item" id="item-more" title="show more()" onclick="showToolbars(this, ['toolbar__secondary', 'toolbar__tertiary-2']);"></button>
+                        </div>
+                        <div class="toolbar__subgroup">
+                            <button class="toolbar__item" id="item-insertLink" title="Insert Link" onclick="createLink();" ></button>
+                            <button class="toolbar__item" id="item-removeLink" title="Remove Link" onclick="unlink();"></button>
+                            <button class="toolbar__item" id="item-insertImage" title="Insert Image" onclick="document.querySelector('#imageSelector').click();">
+                                <input type="file" id="imageSelector" accept="image/png, image/jpeg, image/jpg" hidden>
+                            </button>
+                        </div>
+                        <div class="toolbar__subgroup">
+                            <button class="toolbar__item" id="item-undo" title="Undo" onclick="undo();"></button>
+                            <button class="toolbar__item" id="item-redo" title="Redo" onclick="redo();"></button>
+                        </div>
+                    </div>
+                    <div class="toolbar__secondary" id="toolbar__secondary">
+                        <div class="toolbar__tertiary toolbar__tertiary-1" id="toolbar__tertiary-1">
+                            <div class="toolbar__subgroup">
+                                <button class="toolbar__item" id="item-underline" title="Underline" onclick="underline();"></button>
+                                <button class="toolbar__item" id="item-strikethrough" title="Strikethrough" onclick="strikethrough();"></button>
+                                <button class="toolbar__item" id="item-subscript" title="Subscript" onclick="subscript();"></button>
+                                <button class="toolbar__item" id="item-superscript" title="Superscript" onclick="superscript();"></button>
+                                <button class="toolbar__item" id="item-textColor" title="Text Color" onclick="document.querySelector('#colorpicker').click();">
+                                    <input type="color" id="colorpicker" hidden>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="toolbar__tertiary toolbar__tertiary-2" id="toolbar__tertiary-2">
+                            <div class="toolbar__subgroup">
+                                <button class="toolbar__item" id="item-paragraphLeft" title="Align Left" onclick="justifyLeft();"></button>
+                                <button class="toolbar__item" id="item-paragraphJustify" title="Align Justify" onclick="justifyFull();"></button>
+                                <button class="toolbar__item" id="item-orderedList" title="Ordered List" onclick="insertOrderedList();"></button>
+                                <button class="toolbar__item" id="item-unorderedList" title="Unordered List" onclick="insertUnorderedList();"></button>
+                                <button class="toolbar__item" id="item-indent" title="Indent" onclick="indent();"></button>
+                                <button class="toolbar__item" id="item-outdent" title="Outdent" onclick="outdent();"></button>
+                                <button class="toolbar__item"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="page" contenteditable="true">Start editing now</div>
+                <div class="second-toolbar">
+                    <p class="character-count">Characters : <span>45</span></p>
+                    <a class="btn btn-medium">save now</a>
+                    <a class="btn btn-medium" onclick="hideEditor();">discard</a>
+                </div>
+            </div>
+        </div>
     </body>
-
-    <script>
-
-        function hideElement(className){
-            let ele = document.getElementsByClassName(className);
-            for(let i = 0; i < ele.length; i++)
-                ele[i].classList.add("hide");
-        }
-
-        function showElement(className){
-            let ele = document.getElementsByClassName(className);
-            for(let i = 0; i < ele.length; i++)
-                ele[i].classList.remove("hide");
-        }
-
-        function onclickHandler(current, toshow, tohide){
-            let sidenavs = document.getElementsByClassName("side-nav__item");
-            for(let i = 0; i < sidenavs.length; i++)
-                sidenavs[i].classList.remove("side-nav__item-active");
-            current.classList.add("side-nav__item-active");
-            hideElement(tohide)
-            showElement(toshow);
-            console.log(toshow, tohide);
-        }
-    </script>
+    <script src="./js/index.js"></script>
+    <script src="./js/editor.js"></script>
 </html>

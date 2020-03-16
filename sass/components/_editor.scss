@@ -1,0 +1,208 @@
+.popup {
+    min-height: 100vh;
+    min-width: 100%;
+    position: absolute;
+    background-color: rgba($color-grey-light-4, 0.95);
+    top: 0;
+    left: 0;    
+    z-index: 9999;
+}
+
+.editor {
+    min-height: 90vh;
+    width: $page-width;
+    background-color: $color-grey-light-3;
+    margin: 3rem auto;
+    box-shadow: 0 1.5rem 3rem $color-grey-dark-3;
+    border-radius: 1rem;
+    font-size: 2rem;
+    overflow: hidden;
+    border-radius: .7rem;
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+// to stop sudden flow of page on fixing the toolbar
+.sticky + .page {
+    margin-top: 5rem; // may change ahead
+}
+
+.toolbar {
+    border-bottom: 1px solid $color-grey-light-3;
+    position: relative;
+    transition: all .5s ease-in-out;
+
+    &__primary {
+        height: 5rem;
+        background-color: $color-white;
+        display: flex;
+        position: relative;
+        z-index: 5;
+    }
+
+    &__secondary {
+        height: 5rem;
+        width: 100%;
+        background-color: $color-white;
+        position: relative;
+        margin-top: -5rem;
+        transition: all .5s;
+        z-index: 3;
+    }
+    
+    &__tertiary {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        visibility: hidden;
+        top: -5rem;
+        transition: all .5s;
+
+        &-1 {
+            background-color: $color-grey-light-3; //tochange
+        }
+
+        &-2 {
+            background-color: $color-grey-light-3; //tochange
+        }
+
+        .toolbar__item:hover {
+            background-color: $color-grey-light-4;
+        }
+    }
+
+    &__subgroup {
+        margin: .4rem 2rem;
+        display: flex;
+
+        &:last-child {
+            margin-left: auto;
+        }
+    }
+
+    &__item {
+        height: 4rem;
+        width: 3.8rem;
+        margin: .2rem;
+        border: none;
+        background-color: inherit;
+        cursor: pointer;
+        border-radius: 3px;
+        transition: all .5s;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &:hover {
+            background-color: $color-grey-light-3;
+        }
+
+        &:focus {
+            border: none;
+            outline: none;
+        }
+    }
+
+    &__item + .disable {
+        cursor: default;
+
+        &:hover {
+            background-color: inherit;
+        }
+    }
+
+    &__item-active {
+        background-color: $color-grey-light-3;
+    }
+}
+
+//adding icons to toolbar__items
+#item {
+    &-bold { background-image: url(../img/editor/bold.svg); }
+    &-italic { background-image: url(../img/editor/italic.svg); }
+    &-more { background-image: url(../img/editor/more.svg); }
+
+    &-paragraphRight { background-image: url(../img/editor/paragraphRight.svg); }
+    &-paragraphCenter { background-image: url(../img/editor/paragraphCenter.svg); }
+
+    &-insertLink { background-image: url(../img/editor/insertLink.svg); }
+    &-removeLink { background-image: url(../img/editor/removeLink.svg); }
+    &-insertImage { background-image: url(../img/editor/insertImage.svg); }
+
+    &-undo { background-image: url(../img/editor/undo.svg); }
+    &-redo { background-image: url(../img/editor/redo.svg); }
+
+    // tertiary-1
+    &-underline { background-image: url(../img/editor/underline.svg); }
+    &-strikethrough { background-image: url(../img/editor/strikethrough.svg); }
+    &-subscript { background-image: url(../img/editor/subscript.svg); }
+    &-superscript { background-image: url(../img/editor/superscript.svg); }
+    &-textColor { background-image: url(../img/editor/textColor.svg); }
+
+    // tertiary-2
+    &-paragraphLeft { background-image: url(../img/editor/paragraphLeft.svg); }
+    &-paragraphJustify { background-image: url(../img/editor/paragraphJustify.svg); }
+    &-orderedList { background-image: url(../img/editor/orderedList.svg); }
+    &-unorderedList { background-image: url(../img/editor/unorderedList.svg); }
+    &-indent { background-image: url(../img/editor/indent.svg); }
+    &-outdent { background-image: url(../img/editor/outdent.svg); }
+}
+
+// more text or file options container
+.text-options {
+
+}
+
+.page {
+    background-color: $color-white;
+    flex-grow: 1;
+    padding: 1.5rem 3rem;
+    min-height: 50vh;
+
+    &:focus {
+        outline: none;
+        border: none;
+    }
+}
+
+// page elements styling
+.image-element {
+    height: $default-font-size;
+    width: 3rem;
+    padding: 4px 0;
+    border: none;
+    border-radius: 4px;
+    outline: none;
+    cursor: pointer;
+    background-image: url(../img/editor/insertImage.svg);
+    background-position: center;
+    background-size: cover;
+}
+
+.second-toolbar {
+    background-color: $color-white;
+    padding: 2.5rem;
+    display: flex;
+    justify-content: flex-end;
+    border-top: 1px solid $color-grey-light-3;
+
+    .btn:not(:last-of-type) {
+        margin-right: 2rem;
+    }
+}
+
+.character-count {
+    display: inline-block;
+    margin-right: auto;
+    color: $color-grey-dark-2;
+}
+
+
+// UTILITY
+.toolbar-active {
+    margin-top: 0;
+    top: 0;
+    visibility: visible;
+}

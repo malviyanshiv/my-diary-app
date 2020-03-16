@@ -2,3 +2,9 @@
     visibility: hidden;
     display: none !important;
 }
+
+.sticky {
+    position: fixed !important;
+    top: 0;
+    width: inherit;
+}
