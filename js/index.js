@@ -38,13 +38,25 @@ function onclickHandler(current, toshow, tohide){
     showElement(toshow);
 }
 
-// show the edit panel
-function showEditPanel() {
-    let ele = document.getElementsByClassName("edit-options");
-    ele[0].style.bottom = "0";
-}
 
-function closeEditPanel() {
-    let ele = document.getElementsByClassName("edit-options");
-    ele[0].style.bottom = "-14rem";
+/* --------------------------- EDITOR ------------------------------- */
+
+function showToolbars(cur, toolbars){
+    let done = cur.classList.contains("toolbar__item-active");
+    let tmp = document.getElementsByClassName("toolbar-active");
+    while( tmp.length > 0 )
+        tmp[0].classList.remove("toolbar-active");
+    
+    if( done ){
+        cur.classList.remove("toolbar__item-active");
+        return;
+    }
+    
+    let act = document.getElementsByClassName("toolbar__item-active");
+    while( act.length > 0 )
+        act[0].classList.remove("toolbar__item-active");
+        
+    cur.classList.add("toolbar__item-active");
+    for(let i = 0; i < toolbars.length; i++)
+        document.getElementById(toolbars[i]).classList.add("toolbar-active");
 }

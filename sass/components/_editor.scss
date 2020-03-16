@@ -31,10 +31,106 @@
 }
 
 .toolbar {
-    background-color: $color-white;
-    height: 10rem;
     border-bottom: 1px solid $color-grey-light-3;
-    padding: 1rem 2.5rem;
+    position: relative;
+    transition: all .5s ease-in-out;
+
+    &__primary {
+        height: 5rem;
+        background-color: $color-white;
+        display: flex;
+        position: relative;
+        z-index: 5;
+    }
+
+    &__secondary {
+        height: 5rem;
+        width: 100%;
+        background-color: $color-white;
+        position: relative;
+        margin-top: -5rem;
+        transition: all .5s;
+        z-index: 3;
+    }
+    
+    &__tertiary {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        visibility: hidden;
+        top: -5rem;
+        transition: all .5s;
+
+        &-1 {
+            background-color: red;//$color-grey-light-3; tochange
+        }
+
+        &-2 {
+            background-color: blue;//$color-grey-light-3; tochange
+        }
+
+        toolbar__item:hover {
+            background-color: $color-grey-light-4;
+        }
+    }
+
+    &__subgroup {
+        margin: .4rem 2rem;
+        display: flex;
+
+        &:last-child {
+            margin-left: auto;
+        }
+    }
+
+    &__item {
+        height: 4rem;
+        width: 3.8rem;
+        margin: .2rem;
+        border: none;
+        background-color: inherit;
+        cursor: pointer;
+        border-radius: 3px;
+        transition: all .5s;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &:hover {
+            background-color: $color-grey-light-3;
+        }
+    }
+
+    &__item + .disable {
+        cursor: default;
+
+        &:hover {
+            background-color: inherit;
+        }
+    }
+
+    &__item-active {
+        background-color: $color-grey-light-3;
+    }
+}
+
+//adding icons to toolbar__items
+.toolbar__item {
+    &-1 {
+        background-image: url(../img/editor/bold.svg);
+    }
+
+    &-2 {
+        background-image: url(../img/editor/italic.svg);
+    }
+
+    &-3 {
+        background-image: url(../img/editor/more.svg);
+    }
+}
+
+// more text or file options container
+.text-options {
+
 }
 
 .page {
@@ -65,4 +161,12 @@
     display: inline-block;
     margin-right: auto;
     color: $color-grey-dark-2;
+}
+
+
+// UTILITY
+.toolbar-active {
+    margin-top: 0;
+    top: 0;
+    visibility: visible;
 }

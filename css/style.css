@@ -185,10 +185,69 @@ html {
   margin-top: 9.5rem; }
 
 .toolbar {
-  background-color: #fff;
-  height: 10rem;
   border-bottom: 1px solid #f0eeee;
-  padding: 1rem 2.5rem; }
+  position: relative;
+  transition: all .5s ease-in-out; }
+  .toolbar__primary {
+    height: 5rem;
+    background-color: #fff;
+    display: flex;
+    position: relative;
+    z-index: 5; }
+  .toolbar__secondary {
+    height: 5rem;
+    width: 100%;
+    background-color: #fff;
+    position: relative;
+    margin-top: -5rem;
+    transition: all .5s;
+    z-index: 3; }
+  .toolbar__tertiary {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    visibility: hidden;
+    top: -5rem;
+    transition: all .5s; }
+    .toolbar__tertiary-1 {
+      background-color: red; }
+    .toolbar__tertiary-2 {
+      background-color: blue; }
+    .toolbar__tertiary toolbar__item:hover {
+      background-color: #ccc; }
+  .toolbar__subgroup {
+    margin: .4rem 2rem;
+    display: flex; }
+    .toolbar__subgroup:last-child {
+      margin-left: auto; }
+  .toolbar__item {
+    height: 4rem;
+    width: 3.8rem;
+    margin: .2rem;
+    border: none;
+    background-color: inherit;
+    cursor: pointer;
+    border-radius: 3px;
+    transition: all .5s;
+    background-position: center;
+    background-repeat: no-repeat; }
+    .toolbar__item:hover {
+      background-color: #f0eeee; }
+  .toolbar__item + .disable {
+    cursor: default; }
+    .toolbar__item + .disable:hover {
+      background-color: inherit; }
+  .toolbar__item-active {
+    background-color: #f0eeee; }
+
+.toolbar__item-1 {
+  background-image: url(../img/editor/bold.svg); }
+
+.toolbar__item-2 {
+  background-image: url(../img/editor/italic.svg); }
+
+.toolbar__item-3 {
+  background-image: url(../img/editor/more.svg); }
 
 .page {
   background-color: #fff;
@@ -212,6 +271,11 @@ html {
   display: inline-block;
   margin-right: auto;
   color: #777; }
+
+.toolbar-active {
+  margin-top: 0;
+  top: 0;
+  visibility: visible; }
 
 .header {
   background-color: #fff;

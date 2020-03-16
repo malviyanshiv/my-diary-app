@@ -153,7 +153,50 @@
         <!-------------------------------------------------- EDITOR -------------------------------------------------------->
         <div class="popup">
             <div class="editor">
-                <div class="toolbar">&nbsp;</div>
+                <div class="toolbar">
+                    <div class="toolbar__primary">
+                        <div class="toolbar__subgroup">
+                            <div class="toolbar__item toolbar__item-1" title="Bold"></div>
+                            <div class="toolbar__item toolbar__item-2" title="Italic"></div>
+                            <div class="toolbar__item toolbar__item-3" title="show more" onclick="showToolbars(this, ['toolbar__secondary', 'toolbar__tertiary-1']);"></div>
+                        </div>
+                        <div class="toolbar__subgroup">
+                            <div class="toolbar__item"></div>
+                            <div class="toolbar__item"></div>
+                            <div class="toolbar__item toolbar__item-3" title="show more()" onclick="showToolbars(this, ['toolbar__secondary', 'toolbar__tertiary-2']);"></div>
+                        </div>
+                        <div class="toolbar__subgroup">
+                            <div class="toolbar__item"></div>
+                            <div class="toolbar__item"></div>
+                            <div class="toolbar__item"></div>
+                        </div>
+                        <div class="toolbar__subgroup">
+                            <div class="toolbar__item"></div>
+                            <div class="toolbar__item disable"></div>
+                        </div>
+                    </div>
+                    <div class="toolbar__secondary" id="toolbar__secondary">
+                        <div class="toolbar__tertiary toolbar__tertiary-1" id="toolbar__tertiary-1">
+                            <div class="toolbar__subgroup">
+                                <div class="toolbar__item"></div>
+                                <div class="toolbar__item"></div>
+                                <div class="toolbar__item"></div>
+                                <div class="toolbar__item"></div>
+                                <div class="toolbar__item toolbar__item-3"></div>
+                            </div>
+                        </div>
+                        <div class="toolbar__tertiary toolbar__tertiary-2" id="toolbar__tertiary-2">
+                            <div class="toolbar__subgroup">
+                                <div class="toolbar__item toolbar__item-3"></div>
+                                <div class="toolbar__item toolbar__item-3"></div>
+                                <div class="toolbar__item"></div>
+                                <div class="toolbar__item"></div>
+                                <div class="toolbar__item"></div>
+                                <div class="toolbar__item"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
                 <div class="page" contenteditable="true">Start editing now</div>
                 <div class="second-toolbar">
                     <p class="character-count">Characters : <span>45</span></p>
