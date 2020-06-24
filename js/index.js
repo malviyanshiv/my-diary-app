@@ -28,3 +28,5 @@ function loadEditor(){
 function hideEditor(){
     document.getElementById("editor-container").classList.add("hide");
 }
+
+loadEditor();
